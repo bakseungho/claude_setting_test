@@ -1,0 +1,56 @@
+{
+  "name": "claude-dev-workflow",
+  "displayName": "Claude 개발 워크플로우",
+  "description": "Node.js/TypeScript API 프로젝트를 위한 Claude Code 설정 모음. 코드 리뷰, 테스트 생성, 문서화, 릴리즈 파이프라인 자동화 포함.",
+  "version": "1.0.0",
+  "author": "bakseungho",
+  "repository": "https://github.com/bakseungho/claude_setting_test",
+  "skills": [
+    {
+      "name": "code-review",
+      "path": ".claude/skills/code-review",
+      "description": "변경된 코드를 품질, 보안, 성능 관점에서 검토"
+    }
+  ],
+  "commands": [
+    {
+      "name": "docs",
+      "path": ".claude/commands/docs.md",
+      "description": "src/ 라우터/컨트롤러에서 API 문서 자동 생성"
+    },
+    {
+      "name": "release",
+      "path": ".claude/commands/release.md",
+      "description": "코드 검증 → 테스트 → 빌드 → 버전 태깅 릴리즈 파이프라인"
+    },
+    {
+      "name": "test_gen",
+      "path": ".claude/commands/test_gen.md",
+      "description": "소스 파일 분석 후 Jest 단위 테스트 자동 생성"
+    },
+    {
+      "name": "test_review",
+      "path": ".claude/commands/test_review.md",
+      "description": "변경된 파일 코드 리뷰 및 심각도별 이슈 보고"
+    }
+  ],
+  "agents": [
+    {
+      "name": "code-reviewer",
+      "path": ".claude/agents/code-reviewer.md",
+      "description": "git diff 기반 보안/품질/성능 자동 리뷰"
+    },
+    {
+      "name": "debugger",
+      "path": ".claude/agents/debugger.md",
+      "description": "에러 스택 추적 및 근본 원인 분석"
+    }
+  ],
+  "hooks": {
+    "PreToolUse": ".claude/hooks/protect-config.sh",
+    "PostToolUse": ".claude/hooks/format-on-save.sh"
+  },
+  "mcp": {
+    "puppeteer": "@modelcontextprotocol/server-puppeteer"
+  }
+}

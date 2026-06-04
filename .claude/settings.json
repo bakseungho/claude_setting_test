@@ -1,0 +1,51 @@
+{
+  // 클로드 응답 언어 설정 ( 간혹 영어나 일본어나 중국어로 응답하는 경우가 있음 )
+  "language": "korean",
+  // 클로드 권한 관리
+  "permissions": {
+    // 허용 항목
+    "allow": ["Read", "Edit", "Write"],
+    // 권한에서 일부 금지 항목
+    "deny": ["Read(.env)", "Read(.env.*)", "Read(*.key)", "Read(*.pem)", "Read(credentials.json)"]
+  },
+  // 훅 관리
+  "hooks": {
+    // 도구 실행 전 훅 실행
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/protect-config.sh"
+          }
+        ]
+      }
+    ],
+    // 도구 실행 완료 후 훅 실행
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/format-on-save.sh"
+          }
+        ]
+      }
+    ]
+    // HTTP 훅 방식
+    // "PreToolUse": [
+    //   {
+    //     "matcher": "Bash",
+    //     "hooks": [
+    //       {
+    //         "type": "http",
+    //         "url": "https://your-ci-server.example.com/hooks/pre-tool",
+    //         "timeout_ms": 5000
+    //       }
+    //     ]
+    //   }
+    // ]
+  }
+}

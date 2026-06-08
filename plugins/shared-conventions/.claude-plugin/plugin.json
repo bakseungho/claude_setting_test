@@ -2,6 +2,6 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin.json",
   "name": "shared-conventions",
   "description": "Node.js/TypeScript 프로젝트 공통 코딩/협업 규칙(SSOT). 테스트 작성 규칙, 브라우저 검증 규칙, 네이밍 컨벤션, /commit 자동화. 모든 역할 플러그인이 전제로 하는 공통 규칙.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": { "name": "bakseungho" }
 }

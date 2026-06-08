@@ -1,8 +1,6 @@
 {
   "language": "korean",
-  "extraKnownMarketplaces": [
-    { "name": "claude-dev-workflow", "source": "bakseungho/claude_setting_test" }
-  ],
+  "extraKnownMarketplaces": [{ "name": "claude-dev-workflow", "source": "bakseungho/claude_setting_test" }],
   "plugins": {
     "shared-conventions@claude-dev-workflow": true,
     "planning@claude-dev-workflow": true,
@@ -15,29 +13,5 @@
   "permissions": {
     "allow": ["Read", "Edit", "Write"],
     "deny": ["Read(.env)", "Read(.env.*)", "Read(*.key)", "Read(*.pem)", "Read(credentials.json)"]
-  },
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash .claude/hooks/protect-config.sh"
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash .claude/hooks/format-on-save.sh"
-          }
-        ]
-      }
-    ]
   }
 }

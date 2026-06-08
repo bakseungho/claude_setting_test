@@ -38,9 +38,26 @@ tests/            # Jest 테스트 (src 구조 미러링)
 
 ```
 plugins/
-├── conventions/    # 공통 규칙 (테스트, 브라우저 검증, 코딩 컨벤션)
-└── api-workflow/   # 개발 워크플로우 (커맨드, 에이전트, 스킬, 훅)
+├── shared-conventions/  # 공통 규칙, /commit 자동화
+├── planning/            # 기획 에이전트, /plan-feature
+├── backend/             # 백엔드 에이전트, /docs
+├── frontend/            # FE 에이전트, /scaffold-component
+├── design/              # 디자인 에이전트, 토큰 변환
+├── qa/                  # 코드 리뷰·테스트 에이전트
+└── orchestrator/        # /build-feature 전체 워크플로우
 ```
+
+### 플러그인 수정 규칙
+
+플러그인 파일을 수정할 때는 반드시 해당 플러그인의 `plugin.json` 버전을 올립니다.
+
+| 변경 종류 | 버전 규칙 |
+|----------|----------|
+| 커맨드·스킬 내용 수정 | patch (`1.0.0` → `1.0.1`) |
+| 커맨드·스킬·에이전트 추가 | minor (`1.0.0` → `1.1.0`) |
+| 구조 대폭 변경 | major (`1.0.0` → `2.0.0`) |
+
+수정 후 배포: `git push` → `/plugin update <name>@claude-dev-workflow` → `/reload-plugins`
 
 ## 명령어
 

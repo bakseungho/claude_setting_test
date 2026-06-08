@@ -75,3 +75,7 @@ app/ → views/ → widgets/ → features/ → entities/ → shared/
 - `any` 타입 사용
 - 토큰 미사용 하드코딩
 - 라우트 파일의 비즈니스 로직
+
+## 브라우저 검증 규칙
+
+@rules/browser-verify.md

@@ -1,0 +1,6 @@
+# 클로드 로컬 설정 파일
+.claude/commands/*
+.claude/hooks/*
+.claude/rules/*
+.claude/settings.local.json
+.claude/claude.md

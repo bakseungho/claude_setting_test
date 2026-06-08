@@ -13,10 +13,24 @@ isolation: worktree
 
 체크리스트:
 
-- 보안 취약점 (SQL 인젝션, XSS)
-- 에러 핸들링 누락
+**보안**
+- SQL 인젝션, XSS 취약점
+- 하드코딩된 비밀키/토큰 (`.env`에만 저장해야 함)
+
+**TypeScript 규칙** (CLAUDE.md 기준)
+- `any` 타입 사용 — `unknown` 또는 명시적 타입으로 교체 필요
+- public 함수에 JSDoc 누락
+- Promise 체이닝 — `async/await`으로 교체 필요
+- 비동기 작업에 `try-catch` 누락
+
+**아키텍처**
+- 계층 위반 (`routes → controllers → services → models` 흐름 준수)
+- controller에서 Prisma 직접 사용 (services 레이어에서만 허용)
+
+**품질**
+- 에러 응답에 사용자/개발자 메시지 미분리
 - 성능 문제 (불필요한 반복, N+1 쿼리)
-- 네이밍 컨벤션 준수 여부
+- 네이밍 컨벤션 위반 (파일: kebab-case, 클래스: PascalCase, 함수: camelCase)
 
 ## 출력 형식
 

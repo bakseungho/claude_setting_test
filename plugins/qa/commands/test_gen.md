@@ -20,9 +20,25 @@
 
 ## 3단계: 테스트 파일 작성
 
-프로젝트의 테스트 프레임워크(Jest/Vitest/Mocha)를 확인하고
-`describe → it → Given-When-Then` 패턴으로 작성합니다.
+**Jest 29.x + TypeScript** 기준으로 작성합니다.
+
+```typescript
+describe('{ClassName}', () => {
+  it('should {expected behavior} when {condition}', async () => {
+    // Given
+    // When
+    // Then
+  })
+})
+```
+
+규칙:
+- Prisma는 반드시 mock (`jest.mock('@prisma/client')`)
+- `sleep` / `setTimeout` 금지
+- `any` 타입 금지
 
 ## 4단계: 파일 저장
 
-파일명: `tests/{경로}/{원본파일명}.test.{확장자}`
+파일명: `tests/{src와_동일한_경로}/{원본파일명}.test.ts`
+
+예: `src/services/user.service.ts` → `tests/services/user.service.test.ts`

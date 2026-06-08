@@ -13,6 +13,7 @@ FE 역할 하네스입니다. FSD 아키텍처 기반 컴포넌트 구현을 담
 | Command | `/test [path]` | Vitest 단위 + Playwright E2E 테스트 |
 | Skill | `frontend-conventions` | FSD 레이어 경계, 네이밍, 스타일, 자동화 가이드 |
 | MCP | `figma` | Figma 디자인 토큰 연동 (OAuth) |
+| MCP | `puppeteer` | localhost:3000 브라우저 검증 |
 
 ## 멀티 에이전트 흐름
 

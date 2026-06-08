@@ -1,5 +1,0 @@
-비대화형 질문 // cat pp.txt | claude -p "2번 질문 응답"
-
-1. const arr = Array.from({length: 50}, (_, i) => i + 1); 에서 arr값은?
-
-2. 1번 배열값에서 짝수만 뽑아내는 로직을 알려줘

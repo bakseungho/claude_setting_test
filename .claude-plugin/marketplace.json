@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "claude-dev-workflow",
+  "metadata": {
+    "description": "역할별(기획/BE/FE/Design/QA) 엔지니어링 하네스 플러그인 모음. 공통 규칙은 shared-conventions, 워크플로우는 orchestrator로 엮음.",
+    "version": "1.0.0"
+  },
+  "owner": {
+    "name": "bakseungho",
+    "url": "https://github.com/bakseungho/claude_setting_test"
+  },
+  "plugins": [
+    {
+      "name": "shared-conventions",
+      "source": "./plugins/shared-conventions",
+      "description": "팀 공통 코딩/협업 규칙(SSOT). 테스트 작성, 브라우저 검증, 네이밍 컨벤션. 모든 역할 플러그인이 전제로 하는 공통 규칙.",
+      "version": "1.0.0",
+      "category": "conventions",
+      "keywords": ["conventions", "testing", "browser-verify", "typescript"]
+    },
+    {
+      "name": "planning",
+      "source": "./plugins/planning",
+      "description": "기획 역할 하네스: PRD/스펙 작성 스킬, /plan-feature 커맨드, planning 서브에이전트, Linear 이슈 트래커 MCP.",
+      "version": "1.0.0",
+      "category": "planning",
+      "keywords": ["planning", "prd", "spec", "linear"]
+    },
+    {
+      "name": "backend",
+      "source": "./plugins/backend",
+      "description": "BE 역할 하네스: Express API 설계·스캐폴딩 스킬, /docs 커맨드, backend·api-design-reviewer 멀티 에이전트. 스택: Node.js + Express + TypeScript + Prisma.",
+      "version": "1.0.0",
+      "category": "backend",
+      "keywords": ["express", "api", "prisma", "postgresql", "backend", "scaffold"]
+    },
+    {
+      "name": "frontend",
+      "source": "./plugins/frontend",
+      "description": "FE 역할 하네스: FSD 아키텍처 컨벤션·컴포넌트 스캐폴딩 스킬, /scaffold-component·/lint·/build·/test 커맨드, frontend 서브에이전트, Figma MCP.",
+      "version": "1.0.0",
+      "category": "frontend",
+      "keywords": ["nextjs", "react", "typescript", "fsd", "biome", "figma", "frontend"]
+    },
+    {
+      "name": "design",
+      "source": "./plugins/design",
+      "description": "디자인 역할 하네스: Figma MCP 중심, 디자인 토큰→코드 변환 스킬, 디자인 시스템 가이드, design 서브에이전트.",
+      "version": "1.0.0",
+      "category": "design",
+      "keywords": ["figma", "design-tokens", "design-system"]
+    },
+    {
+      "name": "qa",
+      "source": "./plugins/qa",
+      "description": "QA 역할 하네스: 테스트 생성·코드 리뷰 스킬, /test_gen·/test_review 커맨드, code-reviewer·debugger 멀티 에이전트, 훅, Puppeteer MCP.",
+      "version": "1.0.0",
+      "category": "qa",
+      "keywords": ["qa", "jest", "code-review", "debugger", "puppeteer", "hooks"]
+    },
+    {
+      "name": "orchestrator",
+      "source": "./plugins/orchestrator",
+      "description": "전체 워크플로우 진입점. /release가 코드 검증→테스트→빌드→버전 태깅을 순차 위임한다.",
+      "version": "1.0.0",
+      "category": "workflow",
+      "keywords": ["orchestrator", "release", "workflow"]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "orchestrator",
+  "description": "워크플로우 진입점. /build-feature가 메인 세션을 지휘자로 삼아 planning→backend+design(병렬)→frontend→qa 서브에이전트를 파일 핸드오프로 순차 위임하고, 단계마다 사람 승인 게이트를 둔다. /release는 배포 파이프라인.",
+  "version": "1.0.0",
+  "author": { "name": "bakseungho" }
+}

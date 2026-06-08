@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "frontend",
+  "description": "FE 역할 하네스: FSD 아키텍처 컨벤션·컴포넌트 스캐폴딩 스킬, /scaffold-component·/lint·/format·/build·/test 커맨드, frontend 서브에이전트, Figma MCP.",
+  "version": "1.0.0",
+  "author": { "name": "bakseungho" }
+}

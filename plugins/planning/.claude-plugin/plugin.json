@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "planning",
+  "description": "기획 역할 하네스: PRD/스펙 작성 스킬, /plan-feature 커맨드, planning 서브에이전트, Linear 이슈 트래커 MCP.",
+  "version": "1.0.0",
+  "author": { "name": "bakseungho" }
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "qa",
+  "description": "QA 역할 하네스: 테스트 케이스 생성·코드 리뷰 스킬, /test_gen·/test_review 커맨드, code-reviewer·debugger 서브에이전트, config 보호·저장 시 포맷 훅, Puppeteer MCP.",
+  "version": "1.0.0",
+  "author": { "name": "bakseungho" }
+}

@@ -6,22 +6,21 @@
 
 ## 1단계: 코드 품질 검증
 
-review 커맨드의 체크리스트 기준으로 변경 사항을 검토합니다.
+`code-reviewer` 에이전트를 통해 변경 사항을 검토합니다.
 Critical 또는 High 이슈가 발견되면 여기서 중단합니다.
 
 ## 2단계: 테스트 실행
 
-다음 명령을 실행하고 모든 테스트가 통과해야 합니다:
-'''bash
+```bash
 npm test
-'''
-실패한 테스트가 있으면 중단합니다.
+```
+실패한 테스트가 있으면 중단합니다. 실패 시 `debugger` 에이전트로 원인 분석합니다.
 
 ## 3단계: 빌드 확인
 
-'''bash
+```bash
 npm run build
-'''
+```
 빌드 오류가 있으면 중단합니다.
 
 ## 4단계: 버전 업데이트
@@ -29,13 +28,15 @@ npm run build
 `package.json`의 버전을 `$ARGUMENTS`로 업데이트합니다.
 CHANGELOG.md 상단에 이번 버전의 변경 사항을 추가합니다.
 
-## 5단계: Git 태그 생성
+## 5단계: Git 태그 생성 (승인 게이트)
 
-'''bash
+다음 작업은 사람 승인 후 진행합니다:
+
+```bash
 git add package.json CHANGELOG.md
 git commit -m "chore: release v$ARGUMENTS"
 git tag -a v$ARGUMENTS -m "Release v$ARGUMENTS"
-'''
+```
 
 ## 6단계: 완료 보고
 
